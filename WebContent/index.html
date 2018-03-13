@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fortune Cookie</title>
+<style>
+	#cookie {
+		width: 60%;
+		margin-top: 10%;
+	}
+	#fortune {
+		font-size: 3em;
+	}
+	#explain {
+		font-size: 1.5em;
+	}
+</style>
+</head>
+<body>
+<center>
+
+	<script>
+		function fortuneteller() {
+			var image = document.getElementById('cookieimage');
+			image.src = "images/clickedCookie.jpg";
+			
+			var fortune = document.getElementById('fortune');
+			var explain = document.getElementById('explain');
+			
+			var random = Math.floor(Math.random() * 100);
+			if (random > 90) {
+				fortune.innerHTML="대길(大吉)";
+				explain.innerHTML="복권 사셔야 겠는데요?<br>최고의 운세입니다! ^^";
+			} else if (random > 70) {
+				fortune.innerHTML="길(吉)";
+				explain.innerHTML="오늘은 좋은 일이 있으실 것 같네요 ^^";
+			} else if (random > 50) {
+				fortune.innerHTML="소길(小吉)";
+				explain.innerHTML="작은 행운이 당신을 찾아가게 됩니다 ^^";
+			} else if (random > 30) {
+				fortune.innerHTML="평(平)";
+				explain.innerHTML="나쁘지 않은데요?<br>폄범한 하루가 될 것 같네요 ^^";
+			} else if (random > 10) {
+				fortune.innerHTML="흉(凶)";
+				explain.innerHTML="어쩐지 예감이 좋지 않습니다.<br>조심하세요!";
+			} else {
+				fortune.innerHTML="대흉(大凶)";
+				explain.innerHTML="최악의 하루가 될 것 같네요 ㅠㅠ";
+			}
+		}
+	</script>
+
+	<div id="cookie">
+		<center>
+			<img id="cookieimage" alt="쿠키를 클릭해서 오늘의 운세를 알아보세요!" src="images/fortuneCookie.jpg" onclick="fortuneteller()">
+			<p>	
+				<div id="fortune">
+				</div>
+			</p>
+			<p>
+				<div id="explain">
+					쿠키를 클릭하여 오늘의 운세를 알아보세요!
+				</div>
+			</p>
+		</center>
+	</div>
+</center>
+</body>
+</html>
